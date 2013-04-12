@@ -27,3 +27,13 @@ gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 gem "letter_opener"
 gem "twitter-bootstrap-rails"
+
+# MOD KIMADA
+group :test do
+  gem 'ZenTest'
+  gem 'simplecov', :require => false
+  gem 'shoulda-matchers', :require => false
+end
+
+gem "rb-readline"
+gem "annotate"

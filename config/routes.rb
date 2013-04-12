@@ -1,10 +1,11 @@
 Mblog::Application.routes.draw do
+  
   resources :categories
 
-
-  resources :posts
-
-
+  resources :posts do
+  	resources :comments
+  end
+  
   authenticated :user do
     root :to => 'posts#index'
   end
