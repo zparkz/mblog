@@ -1,0 +1,17 @@
+<%= simple_form_for([@post, @comment]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :body %>
+    <%# MOD KIMADA 4/13/2013 Hidden Fields %>
+    <%= f.hidden_field :post_id, :value => @post.id %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :created_at, :value => Comment.curr_date %> 
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                post_path(:id => @post.id), :class => 'btn' %>
+  </div>
+<% end %>

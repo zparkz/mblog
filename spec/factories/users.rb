@@ -10,12 +10,4 @@ FactoryGirl.define do
     # confirmed_at Time.now
   end
 
-  # MOD KIMADA 4/11/2013
-  factory :admin do 
-  	name 'Administrative User'
-  	email 'admin@test.edu'
-  	password 'changeme'
-  	password_confirmation 'changeme'
-  end
-
 end

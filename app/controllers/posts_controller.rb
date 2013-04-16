@@ -20,6 +20,9 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
 
+    #MOD KIMADA 4/13/2013 Show Only Comments Related to Post ID
+    @comments = Comment.where(:post_id => @post.id) 
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @post }
@@ -47,7 +50,6 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params[:post])
     @post.user_id = current_user.id
-
 
     respond_to do |format|
       if @post.save

@@ -27,9 +27,9 @@ ActiveRecord::Schema.define(:version => 20130412025030) do
   add_index "categories_posts", ["category_id", "post_id"], :name => "index_categories_posts_on_category_id_and_post_id"
 
   create_table "comments", :force => true do |t|
-    t.text     "body"
-    t.integer  "post_id"
-    t.integer  "user_id"
+    t.text     "body",       :null => false
+    t.integer  "post_id",    :null => false
+    t.integer  "user_id",    :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

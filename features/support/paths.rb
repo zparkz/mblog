@@ -17,6 +17,10 @@ module NavigationHelpers
     when /the sign in page/
       '/users/sign_in'
 
+    # MOD KIMADA 3/26/2013
+    when /^the MWIT Posts page$/
+      '/posts/'
+ 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

@@ -1,0 +1,18 @@
+# user_logout.feature
+# KIMADA 4/11/2013
+
+Feature: Logout as a User
+
+  As a user
+  So that I can logout
+  I want to be able to logout
+
+Scenario: User logs out
+
+  Given the following users exist:
+  | email | password | created_at | updated_at |
+  | test@123.com | hooray | 11-APR-2013 | 11-APR-2013 |
+
+  Given I am logged in
+  And I follow "Logout"
+  Then I should see "Signed out successfully"
