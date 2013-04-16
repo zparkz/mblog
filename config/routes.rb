@@ -7,9 +7,9 @@ Mblog::Application.routes.draw do
   end
   
   authenticated :user do
-    root :to => 'posts#index'
+    root :to => 'users#index'
   end
-  root :to => "posts#index"
+  root :to => "users#index"
   devise_for :users
   resources :users 
 end
