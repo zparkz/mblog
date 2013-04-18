@@ -1,4 +1,5 @@
 ### UTILITY METHODS ###
+# https://github.com/RailsApps/rails3-devise-rspec-cucumber
 
 def create_visitor
   @visitor ||= { :name => "Testy McUserton", :email => "example@example.com",

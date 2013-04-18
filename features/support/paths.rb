@@ -20,6 +20,11 @@ module NavigationHelpers
     # MOD KIMADA 3/26/2013
     when /^the MWIT Posts page$/
       '/posts/'
+
+    # MOD KIMADA 4/15/2013 For post_comment.feature
+    when /^the MWIT Posts page for "([^"]*)"$/
+      post = Post.find_by_title($1)
+      "/posts/#{post.id}" 
  
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
