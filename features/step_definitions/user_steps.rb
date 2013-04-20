@@ -72,6 +72,7 @@ end
 When /^I sign in with valid credentials$/ do
   create_visitor
   sign_in
+  find_user #mod aross to see if it changes anything with cucumber
 end
 
 When /^I sign out$/ do
