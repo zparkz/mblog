@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'rails', '3.2.13'
-gem 'sqlite3'
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -33,6 +33,16 @@ group :test do
   gem 'ZenTest'
   gem 'simplecov', :require => false
   gem 'shoulda-matchers', :require => false
+end
+
+group :development, :test do
+  gem 'sqlite3'
+  gem 'factory_girl'
+  #gem 'ruby-debug19', :require => 'ruby-debug' # MOD KIMADA 2/21/2013 Commented out
+end
+group :production do
+  gem 'therubyracer-heroku', :platform => :ruby # MOD KIMADA 2/21/2013 Added
+  gem 'pg'
 end
 
 gem "rb-readline"

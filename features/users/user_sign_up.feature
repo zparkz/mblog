@@ -9,25 +9,25 @@ Feature: Sign Up!
 
 Scenario: User signs up successfully
 
-  Given I am on the MWIT Home page
+  Given I am on the MWIT Posts page
   And I follow "Sign up"
   Then I should see "Sign up"
   And I fill in "Name" with "Test User"
   And I fill in "Email" with "test@test.ta"
-  And I fill in "Password" with "testpass"
-  And I fill in "Password Confirmation" with "testpass"
+  And I fill in "user[password]" with "testpass"
+  And I fill in "user[password_confirmation]" with "testpass"
   And I press "Sign up"
   Then I am on the MWIT Posts page
 
 Scenario: User does not fill in password
 
- Given I am on the MWIT Home page
+ Given I am on the MWIT Posts page
   And I follow "Sign up"
   Then I should see "Sign up"
   And I fill in "Name" with "Test User"
   And I fill in "Email" with ""
-  And I fill in "Password" with "testpass"
-  And I fill in "Password Confirmation" with "testpass"
+  And I fill in "user[password]" with "testpass"
+  And I fill in "user[password_confirmation]" with "testpass"
   And I press "Sign up"
-  Then I am not on the MWIT Posts page
-  And I should see "Please review the problems below"
+  And I should see "Name"
+  And I should see "Email"
