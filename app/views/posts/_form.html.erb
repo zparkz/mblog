@@ -2,6 +2,8 @@
   <%= f.input :title %>
   <%= f.input :body %>
   <%= f.input :publish_date %>
+  <%# MOD KIMADA 4/20/2013 Add Expiration Date %>
+  <%= f.input :exp_date %>
   <%= f.association :categories, :as => :check_boxes %>
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>

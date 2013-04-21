@@ -9,6 +9,16 @@ class PostsController < ApplicationController
      @posts = @posts.by_user_id(params[:user]) if params[:user].present?
      @posts = @posts.by_category_id(params[:cat]) if params[:cat].present?
 
+     # MOD KIMADA
+     if params[:delete_expired].present?
+      Post.where('exp_date < ?', Date.today).delete_all
+     end
+
+     @posts = Post.where(['DATE(exp_date) >= ?', Date.today]) if params[:show_expired].blank?
+     @posts = @posts.expired if params[:show_expired].present?
+     #params.inspect?
+     # END MOD
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }

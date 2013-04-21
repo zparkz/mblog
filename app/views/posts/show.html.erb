@@ -11,7 +11,11 @@
   <dt><strong><%= model_class.human_attribute_name(:publish_date) %>:</strong></dt>
   <dd><%= @post.publish_date %></dd>
   <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
-  <dd><%= @post.user_id %></dd>
+  <dd><%= @post.user.name %></dd>
+  <dt><strong>Categories:</strong></dt>
+  <dd><% @post.categories.each do |cat| %>
+        <%= link_to cat.name, root_path(:cat => cat.id) %>
+      <% end %></dd>
 </dl>
 
 <div class="form-actions">
@@ -22,11 +26,14 @@
               posts_path, :class => 'btn'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_post_path(@post), :class => 'btn' %>
+  <%# MOD KIMADA 4/20/2013 Only Admin or Post Owners should be able to view %>
+        <% if current_user && (current_user.has_role?(:admin) || current_user.id==@post.user_id) %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               post_path(@post),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
+  <% end %>
 </div>
 
 <%# MOD KIMADA 4/13/2013 Show Comments Related to Post %>

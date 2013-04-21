@@ -27,6 +27,9 @@ gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 gem "letter_opener"
 gem "twitter-bootstrap-rails"
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-linkedin'
 
 # MOD KIMADA
 group :test do
