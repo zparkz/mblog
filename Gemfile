@@ -50,3 +50,4 @@ end
 
 gem "rb-readline"
 gem "annotate"
+gem "certified"
