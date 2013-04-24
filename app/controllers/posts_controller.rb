@@ -14,7 +14,7 @@ class PostsController < ApplicationController
       Post.where('exp_date < ?', Date.today).delete_all
      end
 
-     @posts = Post.where(['DATE(exp_date) >= ?', Date.today]) if params[:show_expired].blank?
+     @posts = Post.where(['DATE(exp_date) >= ?', Date.today]) if params[:show_expired].blank? && params[:user].blank? && params[:cat].blank?
      @posts = @posts.expired if params[:show_expired].present?
      #params.inspect?
      # END MOD

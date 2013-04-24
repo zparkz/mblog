@@ -13,7 +13,7 @@
 
 class Post < ActiveRecord::Base
   attr_accessible :body, :publish_date, :title, :category_ids, :exp_date
-  validates_presence_of :title, :body, :publish_date, :user_id, :exp_date
+  validates_presence_of :title, :body, :publish_date, :user_id, :exp_date, :category_ids
   belongs_to :user
   has_and_belongs_to_many :categories
   has_many :comments # MOD KIMADA 4/11/2013

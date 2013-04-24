@@ -17,8 +17,15 @@
 #puts 'user: ' << user.name
 #user.add_role :admin
 #alternative 
- puts 'SETTNG UP DEFAULT USER LOGIN'
- user = User.create! :name=>'admin', :email => 'user@example.com', :password => 'changeme'
- puts 'New user created: ' << user.name
- user2 = User.create! :name=> 'Second User', :email => 'user2@example.com', :password => 'changeme'
- user.add_role :admin
+ puts 'SETTING UP DEFAULT USER LOGIN'
+ #user = User.create! :name=>'admin', :email => 'user@example.com', :password => 'changeme'
+ #puts 'New user created: ' << user.name
+ #user2 = User.create! :name=> 'Second User', :email => 'user2@example.com', :password => 'changeme'
+ #user.add_role :admin
+
+ # MOD KIMADA 4/23/2013
+ puts 'SETTING UP DEFAULT CATEGORIES'
+ cat1 = Category.create! :name => 'Event'
+ cat2 = Category.create! :name => 'Internship'
+ cat3 = Category.create! :name => 'Job'
+ cat4 = Category.create! :name => 'Scholarship'

@@ -86,7 +86,7 @@ GEM
       railties (>= 3.0.0)
     faraday (0.8.7)
       multipart-post (~> 1.1)
-    ffi (1.7.0-x86-mingw32)
+    ffi (1.8.1-x86-mingw32)
     figaro (0.6.3)
       bundler (~> 1.0)
       rails (>= 3, < 5)
@@ -267,8 +267,8 @@ DEPENDENCIES
   jquery-rails
   launchy (>= 2.2.0)
   letter_opener
-  omniauth
-  omniauth-facebook
+  omniauth (~> 1.1.1)
+  omniauth-facebook (~> 1.4.1)
   omniauth-linkedin
   pg
   quiet_assets (>= 1.0.2)

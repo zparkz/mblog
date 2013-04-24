@@ -31,7 +31,7 @@
         <td><%= post.body %></td>
         <td><%= post.publish_date %></td>
         <%# MOD KIMADA 4/20/2013 Show User Name %>
-        <td><%= post.user.name %></td>
+        <td><%= link_to post.user.name, posts_path(:user => post.user.id) %></td>
         <td><%= post.created_at %></td>
         <td><%= post.exp_date %></td>
         <td><% post.categories.each do |cat| %>
