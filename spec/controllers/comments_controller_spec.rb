@@ -34,6 +34,15 @@ describe CommentsController do
 		end
 	end
 
+	# MOD KIMADA 4/23/2013
+	describe "#new" do
+		it "renders the new template" do
+      		get :new, :post_id => @post.id
+      		expect(response).to render_template(:new)
+      		response.should be_success
+    	end
+	end
+
 	describe "#destroy" do
 		it "deletes a comment" do
 			expect { delete :destroy, :id => @comment.id, :post_id => @post.id }.to change(Comment, :count).by(-1)

@@ -13,10 +13,11 @@
 
 class Post < ActiveRecord::Base
   attr_accessible :body, :publish_date, :title, :category_ids, :exp_date
-  validates_presence_of :title, :body, :publish_date, :user_id, :exp_date, :category_ids
+  validates_presence_of :title, :body, :publish_date, :user_id, :exp_date
   belongs_to :user
   has_and_belongs_to_many :categories
-  has_many :comments # MOD KIMADA 4/11/2013
+  #validates_presence_of :category_ids
+  has_many :comments, :dependent => :destroy # MOD KIMADA 4/11/2013
   scope :published, lambda {where(['publish_date <= ?', Date.today])}
   scope :by_user_id, lambda {|uid| where(:user_id => uid)}
   scope :by_category_id, lambda{|cid| joins(:categories).where(['categories.id =?', cid])}

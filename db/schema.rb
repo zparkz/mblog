@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130423010916) do
+ActiveRecord::Schema.define(:version => 20130425054552) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -27,11 +27,12 @@ ActiveRecord::Schema.define(:version => 20130423010916) do
   add_index "categories_posts", ["category_id", "post_id"], :name => "index_categories_posts_on_category_id_and_post_id"
 
   create_table "comments", :force => true do |t|
-    t.text     "body",       :null => false
-    t.integer  "post_id",    :null => false
-    t.integer  "user_id",    :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.text     "body",         :null => false
+    t.integer  "post_id",      :null => false
+    t.integer  "user_id",      :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.datetime "publish_date"
   end
 
   create_table "mwitusers", :force => true do |t|

@@ -37,10 +37,21 @@ describe PostsController do
 			Post.count.should eql 1
 		end
 
+		# MOD KIMADA 4/24/2013
 		it "renders the index template" do
       		get :index
       		expect(response).to render_template("index")
       		response.should be_success
+    	end
+    	# END MOD 4/24/2013
+
+    	it "delete expired posts when Delete Expired Posts link is followed" do
+    		post :create, :post => {:title => 'Another Test Post for Deletion',
+				:body => 'Body of another test post.', :publish_date => '24-JAN-2013',
+				:user_id => '1', :exp_date => '20-APR-2013'}
+			Post.count.should eql 2
+    		get :index, :delete_expired => "Yes"
+    		Post.count.should eql 1
     	end
 	end
 
@@ -62,4 +73,48 @@ describe PostsController do
 			expect { delete :destroy, :id => @post.id }.to change(Post, :count).by(-1)
 		end
 	end
+
+	# MOD KIMADA 4/23/2013
+	describe "#edit" do
+		it "edits a post" do
+			get :edit, id: @post.id
+		end
+
+    	it "renders the edit template" do
+      		get :edit, id: @post.id
+      		expect(response).to render_template("edit")
+      		response.should be_success
+    	end
+	end
+
+	describe "#create" do
+		it "creates a post" do
+			post :create, :post => {:title => 'Another Test Post',
+				:body => 'Body of another test post.', :publish_date => '24-APR-2013',
+				:user_id => '1', :exp_date => '01-JUL-2013'}
+			flash[:notice].should eql "Post was successfully created."
+		end
+
+		it "renders the new template if post if all parameters are not entered: fail" do
+			post :create, :post => {:title => 'XYZ'}
+			get :new
+      		expect(response).to render_template("new")
+      		response.should be_success
+		end
+	end
+
+	describe "#update" do
+		it "updates a post" do
+			put :update, id: @post.id, title: "Changing the Title"
+			flash[:notice].should eql "Post was successfully updated."
+		end
+
+		it "renders the edit template if update fails" do
+			put :update, id: @post.id, :post => {title: ""}
+			get :edit, id: @post.id
+      		expect(response).to render_template("edit")
+      		response.should be_success
+		end
+	end
+	# END MOD 4/23/2013
 end

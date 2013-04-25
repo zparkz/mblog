@@ -10,10 +10,29 @@ describe UsersController do
   end
 
   describe "#index" do
-   it "no authorization, redirect" do
+   it "regular user: no authorization, redirect" do
       get :index
       response.body.should have_content("You are being redirected.")
     end
+
+    it "test" do
+      request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:facebook] 
+    end
+
+    # MOD KIMADA 4/25/2013
+    it "admin user: shows all users" do
+      sign_out @user
+      @admin_user = FactoryGirl.create(:admin_user)
+      @admin_user.add_role :admin
+      sign_in @admin_user
+
+      get :index
+      puts index.html
+      response.body.should have_content("Users")
+
+      sign_out @admin_user
+    end
+    # END MOD 4/25/2013
   end
 
   describe "#show" do

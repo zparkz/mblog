@@ -10,4 +10,16 @@ FactoryGirl.define do
     # confirmed_at Time.now
   end
 
+  # MOD KIMADA 4/25/2013 Add Admin User for Testing
+  factory :admin_user, class: User do
+    name 'Admin User'
+    email 'admin@example.com'
+    password 'adminpass'
+    password_confirmation 'adminpass'
+        
+    # Child of :user factory, since it's in the `factory :user` block
+    factory :admin do
+       admin true
+    end
+  end
 end

@@ -16,7 +16,7 @@
     <td><%= comment.body %></td>
     <td><%= comment.post_id %></td>
     <td><%= comment.user_id %></td>
-    <td><%= comment.created_at %></td>
+    <td><%= comment.publish_date %></td>
     <td><%= link_to 'Show', comment %></td>
     <td><%= link_to 'Edit', edit_post_comment_path(comment) %></td>
     <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>

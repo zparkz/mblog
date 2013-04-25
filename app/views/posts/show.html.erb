@@ -40,7 +40,8 @@
 <table>
 <% @comments.each do |comment| %>
   <tr>
-    <td class = "comment_header"><%= comment.created_at %> by <%= Comment.find_user(comment.user_id).name %>
+    <td class = "comment_header"><%= comment.publish_date %> by 
+      <%= Comment.find_user(comment.user_id).name %>
     </td>
   </tr>
   <tr>

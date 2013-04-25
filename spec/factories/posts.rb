@@ -6,5 +6,6 @@ FactoryGirl.define do
     body "Scholarship Body"
     publish_date "2013-04-07"
     user_id 1
+    exp_date "31-MAY-2013"
   end
 end

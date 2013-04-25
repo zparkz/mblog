@@ -2,6 +2,7 @@
 
 FactoryGirl.define do
   factory :category do
-    name "MyString"
+    name "Scholarship"
+    id 1
   end
 end

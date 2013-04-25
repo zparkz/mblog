@@ -6,7 +6,7 @@
     <%# MOD KIMADA 4/13/2013 Hidden Fields %>
     <%= f.hidden_field :post_id, :value => @post.id %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
-    <%= f.hidden_field :created_at, :value => Comment.curr_date %> 
+    <%= f.hidden_field :publish_date, :value => Comment.curr_date %> 
   </div>
 
   <div class="form-actions">
