@@ -31,7 +31,9 @@
         <td><%= post.body %></td>
         <td><%= post.publish_date %></td>
         <%# MOD KIMADA 4/20/2013 Show User Name %>
-        <td><%= link_to post.user.name, posts_path(:user => post.user.id) %></td>
+        <td>
+        <%= link_to post.user.try(:name), posts_path(:user => post.user.id) %>
+        </td>
         <td><%= post.created_at %></td>
         <td><%= post.exp_date %></td>
         <td><% post.categories.each do |cat| %>
@@ -68,7 +70,7 @@
 <%# Delete Expired Posts Link %>
 <% if current_user && current_user.has_role?(:admin) && params[:show_expired].present? %>
 <%= link_to t('.index', :default => t("Delete Expired Posts")),
-            posts_path(:delete_expired => 'Yes'),
+            posts_path(:delete_expired => 'Yes', :show_expired => 'Yes'),
             :class => 'btn btn-primary' %>
 <% end %>
 

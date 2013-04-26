@@ -6,6 +6,13 @@ def create_visitor
     :password => "changeme", :password_confirmation => "changeme" }
 end
 
+# MOD KIMADA 4/25/2013
+def create_admin_user
+  @admin ||= { :name => 'Admin User', :email => 'admin@example.com', 
+    :password => 'changeme', :password_confirmation => 'changeme'}
+end
+# END MOD 4/25/2013
+
 def find_user
   @user ||= User.first conditions: {:email => @visitor[:email]}
 end
@@ -23,10 +30,26 @@ def create_user
   @user = FactoryGirl.create(:user, email: @visitor[:email])
 end
 
+# MOD KIMADA 4/25/2013
+def create_admin
+  create_admin_user
+  delete_admin_user
+  @user = FactoryGirl.create(:admin_user, email: @admin[:email])
+  @user.add_role :admin
+end
+# END MOD 4/25/2013
+
 def delete_user
   @user ||= User.first conditions: {:email => @visitor[:email]}
   @user.destroy unless @user.nil?
 end
+
+# MOD KIMADA 4/25/2013
+def delete_admin_user
+  @user ||= User.first conditions: {:email => @admin[:email]}
+  @user.destroy unless @user.nil?
+end
+# END MOD 4/25/2013
 
 def sign_up
   delete_user
@@ -46,6 +69,15 @@ def sign_in
   click_button "Sign in"
 end
 
+# MOD KIMADA 4/25/2013
+def sign_in_admin
+  visit '/users/sign_in'
+  fill_in "Email", :with => @admin[:email]
+  fill_in "Password", :with => @admin[:password]
+  click_button "Sign in"
+end
+# END MOD 4/25/2013
+
 ### GIVEN ###
 Given /^I am not logged in$/ do
   visit '/users/sign_out'
@@ -55,6 +87,14 @@ Given /^I am logged in$/ do
   create_user
   sign_in
 end
+
+# MOD KIMADA 4/25/2013
+Given /^I am an admin and logged in$/ do
+  create_admin
+  sign_in_admin
+end
+# END MOD 4/25/2013
+
 
 Given /^I exist as a user$/ do
   create_user

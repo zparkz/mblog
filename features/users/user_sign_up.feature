@@ -9,9 +9,9 @@ Feature: Sign Up!
 
 Scenario: User signs up successfully
 
-  Given I am on the MWIT Posts page
+  Given I am on the home page
   And I follow "Sign up"
-  Then I should see "Sign up"
+  Then I should see "Password confirmation"
   And I fill in "Name" with "Test User"
   And I fill in "Email" with "test@test.ta"
   And I fill in "user[password]" with "testpass"
@@ -21,9 +21,9 @@ Scenario: User signs up successfully
 
 Scenario: User does not fill in password
 
- Given I am on the MWIT Posts page
+ Given I am on the home page
   And I follow "Sign up"
-  Then I should see "Sign up"
+  Then I should see "Password confirmation"
   And I fill in "Name" with "Test User"
   And I fill in "Email" with ""
   And I fill in "user[password]" with "testpass"
