@@ -2,6 +2,7 @@
 
 FactoryGirl.define do
   factory :post do
+  	categories {[FactoryGirl.create(:category)]}
     title "Test Scholarship 1"
     body "Scholarship Body"
     publish_date "2013-04-07"

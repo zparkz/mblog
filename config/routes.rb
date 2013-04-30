@@ -9,7 +9,7 @@ Mblog::Application.routes.draw do
   end
   
   authenticated :user do
-    root :to => 'posts#index'
+    root :to => 'home#index'
   end
   root :to => "home#index"
   #devise_for :users

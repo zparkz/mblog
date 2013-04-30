@@ -46,12 +46,19 @@ describe PostsController do
     	# END MOD 4/24/2013
 
     	it "delete expired posts when Delete Expired Posts link is followed" do
-    		post :create, :post => {:title => 'Another Test Post for Deletion',
-				:body => 'Body of another test post.', :publish_date => '24-JAN-2013',
-				:user_id => '1', :exp_date => '20-APR-2013'}
+    		post_params = FactoryGirl.attributes_for(:post)
+  			expect { post :create, :post => post_params }.to change(Post, :count).by(1) 
+    		#post :create, :post => {:title => 'Another Test Post for Deletion',
+			#	:body => 'Body of another test post.', :publish_date => '24-JAN-2013',
+			#	:user_id => '1', :exp_date => '20-APR-2013', :category => 'Job'}
 			Post.count.should eql 2
+			p Post.all
     		get :index, :delete_expired => "Yes"
     		Post.count.should eql 1
+
+    		#after(:each) do
+			#	puts example.exception
+			#end
     	end
 	end
 
@@ -89,9 +96,10 @@ describe PostsController do
 
 	describe "#create" do
 		it "creates a post" do
-			post :create, :post => {:title => 'Another Test Post',
+  			post :create, :post => {:title => 'Another Test Post',
 				:body => 'Body of another test post.', :publish_date => '24-APR-2013',
 				:user_id => '1', :exp_date => '01-JUL-2013'}
+			p Post.all
 			flash[:notice].should eql "Post was successfully created."
 		end
 

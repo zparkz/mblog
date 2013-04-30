@@ -1,10 +1,10 @@
 require 'spec_helper'
 
 describe HomeController do
-	describe "#home" do
+	describe "#index" do
 		it "renders the home template" do
-      		get :home
-      		expect(response).to render_template("home")
+      		get :index
+      		expect(response).to render_template("index")
       		response.should be_success
     	end
 end

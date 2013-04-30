@@ -16,7 +16,7 @@ class Post < ActiveRecord::Base
   validates_presence_of :title, :body, :publish_date, :user_id, :exp_date
   belongs_to :user
   has_and_belongs_to_many :categories
-  #validates_presence_of :category_ids
+  validates_presence_of :category_ids
   has_many :comments, :dependent => :destroy # MOD KIMADA 4/11/2013
   scope :published, lambda {where(['publish_date <= ?', Date.today])}
   scope :by_user_id, lambda {|uid| where(:user_id => uid)}
