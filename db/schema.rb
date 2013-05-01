@@ -35,14 +35,6 @@ ActiveRecord::Schema.define(:version => 20130425054552) do
     t.datetime "publish_date"
   end
 
-  create_table "mwitusers", :force => true do |t|
-    t.string   "name"
-    t.string   "provider"
-    t.string   "uid"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "body"
