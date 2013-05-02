@@ -17,8 +17,10 @@
       <th><%= model_class.human_attribute_name(:body) %></th>
       <th><%= model_class.human_attribute_name(:publish_date) %></th>
       <th>User</th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%= model_class.human_attribute_name(:exp_date) %></th>
+      <% if current_user && (current_user.has_role?(:admin)) %>
+        <th><%= model_class.human_attribute_name(:created_at) %></th>
+        <th><%= model_class.human_attribute_name(:exp_date) %></th>
+      <% end %>
       <th>Categories</th>
       <%# <th><%=t '.actions', :default => t("helpers.actions") %>
     </tr>

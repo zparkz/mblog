@@ -24,10 +24,10 @@
               new_post_comment_path(@post), :class => 'btn' %>
   <%= link_to t('.back', :default => t("helpers.links.back")),
               posts_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_post_path(@post), :class => 'btn' %>
   <%# MOD KIMADA 4/20/2013 Only Admin or Post Owners should be able to view %>
         <% if current_user && (current_user.has_role?(:admin) || current_user.id==@post.user_id) %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_post_path(@post), :class => 'btn' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               post_path(@post),
               :method => 'delete',
