@@ -36,20 +36,24 @@ Released   : 20071215
 	<h2><%= link_to "Current Posts", posts_path %></h2>
 	<ul>
 		<li class="first">
-			<h3>Mills CS Talk</h3>
-			<p><strong>[Apr. 23]</strong> <b>"Computer science challenges in geospaital analysis and why you should care"</b>Come hear <b>Dave Thau</b>, our first candidate for the <u>Chan-Norris Endowed Visiting Professor </u> Position in Computer Science for next year. David Thau is senior developer advocate for Google Earth Engine, Google's satellite image processing platform. He joined Google in 2010, bringing with him 20 years of industry experience developing Internet-based applications.</br>
-				When: Tuesday, April 23</br>
-				Time: 4 - 5 PM</br>
-				Where: CPM 205</br><a href="#">Read more here...</a></p>
+			<%# MOD KIMADA 5/1/2013 %>
+			<h3><%= @post1.title %></h3>
+			<p><strong>[<%= @post1.publish_date %>]</strong> 
+			<%= truncate(@post1.body, :length => 365) %>
+			<%= link_to "More…", post_path(@post1) %></p>
 		</li>
 		<li>
-			<h3>CS Summer Internship</h3>
-			<p><strong>[Apr. 12]</strong> Benefitter is looking for a few engineering interns to join us over the summer. We're a brand new startup with a great team working on helping people transition to Health Care Reform (Obama Care) and all the changes in health care that brings.</br> You'll report directly to our VP of Engineering and be mentored by her or by another senior member of the team. </br> To be a good fit you'll need to have: ..<a href="#">Read more here...</a></p>
+			<h3><%= @post2.title %></h3>
+			<p><strong>[<%= @post2.publish_date %>]</strong> 
+			<%= truncate(@post2.body, :length => 365) %>
+			<%= link_to 'More…', post_path(@post2) %></p>
 		</li>
 		<li>
-			<h3>Job Opportunity</h3>
-			<p><strong>[Apr. ]</strong> <b>Software Engineer - THUMBTACK.COM - San Francisco, CA. </b>Looking for great engineers to join us in building the next generation of consumer Internet applications. If you like tackling large problems head-on, you'll likely be a good fit. You will have an immediat impact as you take ownership of new features adn work with our engineering team to bring them to life. 
-			What we are looking for: <a href="#">Read more here...</a></p>
+			<h3><%= @post3.title %></h3>
+			<p><strong>[<%= @post3.publish_date %>]</strong> 
+			<%= truncate(@post3.body, :length => 365) %>
+			<%= link_to 'More…', post_path(@post3) %></p>
+			<%# END MOD KIMADA %>
 		</li>
 	</ul>
 	<div style="clear: both; height: 40px;">&nbsp;</div>
