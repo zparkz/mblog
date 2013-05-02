@@ -96,7 +96,6 @@ describe PostsController do
 
 	describe "#create" do
 		it "creates a post" do
-			#FactoryGirl.attributes_for(:item_variant, :item_family_id => ItemFamily.first.id)
 			post_params = FactoryGirl.attributes_for(:post_exp, :category => Category.first.id)
 			post :create, :post => post_params
 			flash[:notice].should eql "Post was successfully created."

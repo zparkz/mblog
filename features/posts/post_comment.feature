@@ -14,15 +14,18 @@ Given the following users exist:
   | user@example.com | changeme | 15-APR-2013 | 15-APR-2013 | Testy McUserton |
 
 Given the following posts exist:
-  | title | body | publish_date | user_id | created_at | updated_at |
-  | Google Scholarship | This is a scholarship. | 13-APR-2013 | 1 | 13-APR-2013 | 13-APR-2013 |
-  | Apple Internship | This is an internship. | 13-APR-2013 | 1 | 13-APR-2013 | 13-APR-2013 |
+  | title | body | publish_date | user_id | created_at | updated_at | exp_date |
+  | Google Scholarship | This is a scholarship. | 13-APR-2013 | 1 | 13-APR-2013 | 13-APR-2013 | 01-JUN-2013 |
+  | Apple Internship | This is an internship. | 13-APR-2013 | 1 | 13-APR-2013 | 13-APR-2013 | 01-JUL-2013 |
+  | Facebook Event | This is an event. | 13-APR-2013 | 1 | 13-APR-2013 | 13-APR-2013 | 01-JUL-2013 |
 
   And I am on the MWIT Posts page
   When I follow "Login"
   When I fill in "Email" with "user@example.com"
   When I fill in "Password" with "changeme"
   And I press "Sign in"
+  And I am on the home page
+  And I follow "Current Posts"
   And I follow "Google Scholarship"
   When I follow "Comment"
   Then I should see "Google Scholarship"
@@ -38,15 +41,17 @@ Given the following posts exist:
   | user@example.com | changeme | 15-APR-2013 | 15-APR-2013 | Testy McUserton |
 
   Given the following posts exist:
-  | title | body | publish_date | user_id | created_at | updated_at |
-  | Google Scholarship | This is a scholarship. | 13-APR-2013 | 1 | 13-APR-2013 | 13-APR-2013 |
-  | Apple Internship | This is an internship. | 13-APR-2013 | 1 | 13-APR-2013 | 13-APR-2013 |
+  | title | body | publish_date | user_id | created_at | updated_at | exp_date |
+  | Google Scholarship | This is a scholarship. | 13-APR-2013 | 1 | 13-APR-2013 | 13-APR-2013 | 01-JUN-2013 |
+  | Apple Internship | This is an internship. | 13-APR-2013 | 1 | 13-APR-2013 | 13-APR-2013 | 01-JUL-2013 |
 
   And I am on the MWIT Posts page
   When I follow "Login"
   When I fill in "Email" with "user@example.com"
   When I fill in "Password" with "changeme"
   And I press "Sign in"
+  And I am on the home page
+  And I follow "Current Posts"
   And I follow "Apple Internship"
   When I follow "Comment"
   Then I should see "Apple Internship"

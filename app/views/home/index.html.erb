@@ -37,25 +37,32 @@ Released   : 20071215
 	<ul>
 		<li class="first">
 			<%# MOD KIMADA 5/1/2013 %>
-			<h3><%= @post1.title %></h3>
-			<p><strong>[<%= @post1.publish_date %>]</strong> 
-			<%= truncate(@post1.body, :length => 365) %>
-			<%= link_to "More…", post_path(@post1) %></p>
+			<% unless @post1.nil? %>
+				<h3><%= @post1.title %></h3>
+				<p><strong>[<%= @post1.publish_date %>]</strong> 
+				<%= truncate(@post1.body, :length => 365) %>
+				<%= link_to "More…", post_path(@post1) %></p>
+			<% end %>
 		</li>
 		<li>
-			<h3><%= @post2.title %></h3>
-			<p><strong>[<%= @post2.publish_date %>]</strong> 
-			<%= truncate(@post2.body, :length => 365) %>
-			<%= link_to 'More…', post_path(@post2) %></p>
+			<% unless @post2.nil? %>
+				<h3><%= @post2.title %></h3>
+				<p><strong>[<%= @post2.publish_date %>]</strong> 
+				<%= truncate(@post2.body, :length => 365) %>
+				<%= link_to "More…", post_path(@post2) %></p>
+			<% end %>
 		</li>
 		<li>
-			<h3><%= @post3.title %></h3>
-			<p><strong>[<%= @post3.publish_date %>]</strong> 
-			<%= truncate(@post3.body, :length => 365) %>
-			<%= link_to 'More…', post_path(@post3) %></p>
+			<% unless @post3.nil? %>
+				<h3><%= @post3.title %></h3>
+				<p><strong>[<%= @post3.publish_date %>]</strong> 
+				<%= truncate(@post3.body, :length => 365) %>
+				<%= link_to "More…", post_path(@post3) %></p>
+			<% end %>
 			<%# END MOD KIMADA %>
 		</li>
 	</ul>
+	
 	<div style="clear: both; height: 40px;">&nbsp;</div>
 </div>
 <div id="sidebar">
