@@ -38,12 +38,18 @@ Released   : 20071215
 	<h2><%= link_to "Current Posts", posts_path %></h2>
 	<ul>
 		<li class="first">
-			<h3>Title post 1</h3>
-			<p><strong>[Dec. 05]</strong> Nullam  ante orci, eget, tempus quis, ultrices in, est. Curabitur sit amet  nulla. Nam in massa. Sed vel tellus. Curabitur sem urna, consequat vel,  suscipit sit amet  nulla. Nam in massa. Sed vel tellus. Curabitur sem urna, consequat vel,  suscipit in, mattis placerat, nulla. Sed ac leo. Pellentesque  imperdiet lorem dolor. <a href="#">More…</a></p>
+			<%# MOD KIMADA 5/1/2013 %>
+			<h3><%= @post1.title %></h3>
+			<p><strong>[<%= @post1.publish_date %>]</strong> 
+			<%= truncate(@post1.body, :length => 365) %>
+			<%= link_to "More…", post_path(@post1) %></p>
 		</li>
 		<li>
-			<h3>Title post 2</h3>
-			<p><strong>[Dec. 01]</strong> Donec  leo, vivamus fermentum nibh in augue praesent a lacus at urna congue  rutrum. Quisque dictum integer nisl risus, sagittis convallis, rutrum  id, congue, and nibh. Duis enim nulla, luctus eu, dapibus lacinia, venenatis id, quam.  Vestibulum imperdiet, magna nec imperdiet, magna nec imperdiet, magna nec ipsum dolor eleifend. <a href="#">More…</a></p>
+			<h3><%= @post2.title %></h3>
+			<p><strong>[<%= @post2.publish_date %>]</strong> 
+			<%= truncate(@post2.body, :length => 365) %>
+			<%= link_to 'More…', post_path(@post2) %></p>
+			<%# END MOD KIMADA %>
 		</li>
 		<li>
 			<h3>Title Post 3</h3>

@@ -56,9 +56,12 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_post_path,
-            :class => 'btn btn-primary' %>
+<%# MOD KIMADA Hide New Link if Not Logged On %>
+<% if current_user %>
+  <%= link_to t('.new', :default => t("helpers.links.new")),
+              new_post_path,
+              :class => 'btn btn-primary' %>
+<% end %>
 
 <%# MOD KIMADA Show Expired Posts Link %>
 <% if current_user && current_user.has_role?(:admin) && params[:show_expired].blank? %>

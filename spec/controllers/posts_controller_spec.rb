@@ -6,7 +6,10 @@ describe PostsController do
 		@user = FactoryGirl.create(:user)
 		sign_in @user
     	@post = FactoryGirl.create(:post)
+    	#@post_exp = FactoryGirl.create(:post_exp)
   	end
+
+  	#let(:post_exp) {FactoryGirl.create(:post_exp, :category_ids => FactoryGirl.create(:category))}
 
 	describe "#title" do
 		it "returns the correct title" do
@@ -46,19 +49,16 @@ describe PostsController do
     	# END MOD 4/24/2013
 
     	it "delete expired posts when Delete Expired Posts link is followed" do
-    		post_params = FactoryGirl.attributes_for(:post)
-  			expect { post :create, :post => post_params }.to change(Post, :count).by(1) 
-    		#post :create, :post => {:title => 'Another Test Post for Deletion',
+    		post_params = FactoryGirl.attributes_for(:post_exp)
+    		#Post.should_receive(:create).and_return(@post_exp)
+  			#expect { post :create, :post => post_params }.to change(Post, :count).by(1) 
+    		post :create, :post => post_params #{:title => 'Another Test Post for Deletion',
 			#	:body => 'Body of another test post.', :publish_date => '24-JAN-2013',
 			#	:user_id => '1', :exp_date => '20-APR-2013', :category => 'Job'}
 			Post.count.should eql 2
 			p Post.all
-    		get :index, :delete_expired => "Yes"
+	   		get :index, :delete_expired => "Yes"
     		Post.count.should eql 1
-
-    		#after(:each) do
-			#	puts example.exception
-			#end
     	end
 	end
 
@@ -96,10 +96,9 @@ describe PostsController do
 
 	describe "#create" do
 		it "creates a post" do
-  			post :create, :post => {:title => 'Another Test Post',
-				:body => 'Body of another test post.', :publish_date => '24-APR-2013',
-				:user_id => '1', :exp_date => '01-JUL-2013'}
-			p Post.all
+			#FactoryGirl.attributes_for(:item_variant, :item_family_id => ItemFamily.first.id)
+			post_params = FactoryGirl.attributes_for(:post_exp, :category => Category.first.id)
+			post :create, :post => post_params
 			flash[:notice].should eql "Post was successfully created."
 		end
 

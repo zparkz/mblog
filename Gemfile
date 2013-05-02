@@ -48,6 +48,6 @@ group :production do
   gem 'pg'
 end
 
-gem "rb-readline"
+gem 'rb-readline', '~> 0.4.2'
 gem "annotate"
 gem "certified"

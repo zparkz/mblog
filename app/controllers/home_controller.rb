@@ -1,5 +1,11 @@
 class HomeController < ApplicationController
-  def index
+	# MOD KIMADA 5/1/2013
+	include HomeHelper
+  
+  	def index
     #@users = User.all
-  end
+    	@post1 = HomeHelper::posts_order(1)
+    	@post2 = HomeHelper::posts_order(2)
+    	@post3 = HomeHelper::posts_order(3)
+  	end
 end

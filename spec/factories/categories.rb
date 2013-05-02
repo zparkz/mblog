@@ -4,4 +4,8 @@ FactoryGirl.define do
   factory :category do
     name "Scholarship"
   end
+
+  factory :category2, class: Category do
+  	name "Event"
+  end
 end
