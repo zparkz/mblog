@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : News Beat
+Description: A fixed-width design suitable for small sites and blogs.
+Version    : 1.0
+Released   : 20071215
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Women in Technology</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<!--added direct link to application.css instead of default style.css (spark) -->
+<link href="application.css" rel="stylesheets" type="text/css" media="screen" />
+</head>
+
+
+<div id="latest-post" class="post">
+	<!--<p class="byline"><span>Posted on April 21st, 2013 by <a href="#">Alison Ross</a></span></p>-->
+	<h1 class="title"><a href="#">About This Site</a></h1>
+	<div class="entry"><img src="assets/mwit_logo.jpg" alt="" width="70" height="90" class="left" />
+		<p>This site is moderated by the computer science department at Mills College, Oakland. Its purpose is to share information that is useful for women pursuing a career in technology. While primarily for the women at Mills, we hope that this resource will prove useful for all women seeking to make a mark in the business of computing.</p>
+		<!-- 
+		<p>Information posted can be accessed by anyone, but you must sign up to comment or post.</p>
+		-->
+		
+	 </div>
+	<!--<p class="meta"><a href="#" class="comments">14 Comments</a> &nbsp;&nbsp;&nbsp; <a href="#" class="permalink">Permalink</a></p>-->
+	</div> 
+<div id="recent-posts">
+	<h2><%= link_to "Current Posts", posts_path %></h2>
+	<ul>
+		<li class="first">
+			<h3>Mills CS Talk</h3>
+			<p><strong>[Apr. 23]</strong> <b>"Computer science challenges in geospaital analysis and why you should care"</b>Come hear <b>Dave Thau</b>, our first candidate for the <u>Chan-Norris Endowed Visiting Professor </u> Position in Computer Science for next year. David Thau is senior developer advocate for Google Earth Engine, Google's satellite image processing platform. He joined Google in 2010, bringing with him 20 years of industry experience developing Internet-based applications.</br>
+				When: Tuesday, April 23</br>
+				Time: 4 - 5 PM</br>
+				Where: CPM 205</br><a href="#">Read more here...</a></p>
+		</li>
+		<li>
+			<h3>CS Summer Internship</h3>
+			<p><strong>[Apr. 12]</strong> Benefitter is looking for a few engineering interns to join us over the summer. We're a brand new startup with a great team working on helping people transition to Health Care Reform (Obama Care) and all the changes in health care that brings.</br> You'll report directly to our VP of Engineering and be mentored by her or by another senior member of the team. </br> To be a good fit you'll need to have: ..<a href="#">Read more here...</a></p>
+		</li>
+		<li>
+			<h3>Job Opportunity</h3>
+			<p><strong>[Apr. ]</strong> <b>Software Engineer - THUMBTACK.COM - San Francisco, CA. </b>Looking for great engineers to join us in building the next generation of consumer Internet applications. If you like tackling large problems head-on, you'll likely be a good fit. You will have an immediat impact as you take ownership of new features adn work with our engineering team to bring them to life. 
+			What we are looking for: <a href="#">Read more here...</a></p>
+		</li>
+	</ul>
+	<div style="clear: both; height: 40px;">&nbsp;</div>
+</div>
+<div id="sidebar">
+	<ul>
+		<li id="search">
+			<h2>Search</h2>
+			<form id="searchform" method="get" action="">
+				<div>
+					<input type="text" name="s" id="s" size="15" />
+					<br />
+					<input name="submit" type="submit" value="Search" />
+				</div>
+			</form>
+		</li>
+		<li id="calendar">
+			<h2>Calendar</h2>
+			<div id="calendar_wrap">
+				<table summary="Calendar">
+					<caption>
+					May 2013
+					</caption>
+					<thead>
+						<tr>
+							<th abbr="Monday" scope="col" title="Monday">M</th>
+							<th abbr="Tuesday" scope="col" title="Tuesday">T</th>
+							<th abbr="Wednesday" scope="col" title="Wednesday">W</th>
+							<th abbr="Thursday" scope="col" title="Thursday">T</th>
+							<th abbr="Friday" scope="col" title="Friday">F</th>
+							<th abbr="Saturday" scope="col" title="Saturday">S</th>
+							<th abbr="Sunday" scope="col" title="Sunday">S</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr>
+							<td abbr="Aoril" colspan="3" id="prev"><a href="#" title="View posts for April 2013">&laquo; Apr</a></td>
+							<td class="pad">&nbsp;</td>
+							<td abbr="June" colspan="3" id="next"><a href="3" title="View posts for June 2013">Jun &raquo;</a></td>
+						</tr>
+					</tfoot>
+					<tbody>
+						<tr>
+							<td colspan="3" class="pad">&nbsp;</td>
+							
+							<td>1</td>
+							<td>2</td>
+							<td>3</td>
+							<td>4</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>6</td>
+							<td>7</td>
+							<td>8</td>
+							<td>9</td>
+							<td>10</td>
+							<td>11</td>
+						</tr>
+						<tr>
+							<td><a href="#">12</a></td>
+							<td>13</td>
+							<td>14</td>
+							<td>15</td>
+							<td>16</td>
+							<td>17</td>
+							<td>18</td>
+						</tr>
+						<tr>
+							<td>19</td>
+							<td>20</td>
+							<td>21</td>
+							<td>22</td>
+							<td>23</td>
+							<td id="today">24</td>
+							<td>25</td>
+						</tr>
+						<tr>
+							<td>26</td>
+							<td>27</td>
+							<td>28</td>
+							<td>29</td>
+							<td>30</td>
+							<td class="pad" colspan="2">&nbsp;</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</li>
+		<li id="categories-1">
+			<h2>Categories</h2>
+			<ul>
+				<li><a href="#" title="View all posts filed under Uncategorized">Uncategorized</a> (3) </li>
+				<li><a href="#" title="View all posts filed under Lorem Ipsum">Jobs</a> (42) </li>
+				<li><a href="#" title="View all posts filed under Urna Congue Rutrum">Internships</a> (28) </li>
+				<li><a href="#" title="View all posts filed under Augue Praesent">Scholarships</a> (55) </li>
+				<li><a href="#" title="View all posts filed under Vivamus Fermentum">Events</a> (13) </li>
+			</ul>
+		</li>
+	</ul>
+	<div style="clear: both; height: 40px;">&nbsp;</div>
+</div>
+<hr />
+<div id="footer">
+	<p class="legal">&copy;2013 All Rights Reserved.</p>
+	<p class="credit">Designed by <a href="http://www.freecsstemplates.org">FCT</a>.</p>
+</div>
+</body>
+</html>
