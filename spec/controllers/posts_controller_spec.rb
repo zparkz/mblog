@@ -6,10 +6,7 @@ describe PostsController do
 		@user = FactoryGirl.create(:user)
 		sign_in @user
     	@post = FactoryGirl.create(:post)
-    	#@post_exp = FactoryGirl.create(:post_exp)
   	end
-
-  	#let(:post_exp) {FactoryGirl.create(:post_exp, :category_ids => FactoryGirl.create(:category))}
 
 	describe "#title" do
 		it "returns the correct title" do
@@ -52,11 +49,8 @@ describe PostsController do
     		post_params = FactoryGirl.attributes_for(:post_exp)
     		#Post.should_receive(:create).and_return(@post_exp)
   			#expect { post :create, :post => post_params }.to change(Post, :count).by(1) 
-    		post :create, :post => post_params #{:title => 'Another Test Post for Deletion',
-			#	:body => 'Body of another test post.', :publish_date => '24-JAN-2013',
-			#	:user_id => '1', :exp_date => '20-APR-2013', :category => 'Job'}
+    		post :create, :post => post_params
 			Post.count.should eql 2
-			p Post.all
 	   		get :index, :delete_expired => "Yes"
     		Post.count.should eql 1
     	end
