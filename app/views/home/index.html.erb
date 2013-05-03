@@ -15,24 +15,26 @@ Released   : 20071215
 <title>Women in Technology</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<!--added direct link to application.css instead of default style.css (spark) -->
+<!--added direct link to application.css instead of default style.css (spark 4/30/2013) -->
 <link href="application.css" rel="stylesheets" type="text/css" media="screen" />
 </head>
-
+<!--added missing body tag (spark 5/2/2013) -->
+<body>
 
 <div id="latest-post" class="post">
 	<!--<p class="byline"><span>Posted on April 21st, 2013 by <a href="#">Alison Ross</a></span></p>-->
 	<h1 class="title"><a href="#">About This Site</a></h1>
-	<div class="img.left"><img src="assets/mwit_logo.jpg" alt="" width="70" height="90" class="left" />
+	<div class="img.left"><img src="assets/mwit_logo.jpg" alt="" width="140" height="180" class="left" />
+	<div class="img.right"><img src="assets/mwit_logo.jpg" alt="" width="140" height="180" class="right" />
 		<p>This site is moderated by the computer science department at Mills College, Oakland. Its purpose is to share information that is useful for women pursuing a career in technology. While primarily for the women at Mills, we hope that this resource will prove useful for all women seeking to make a mark in the business of computing.</p>
-		<!-- 
-		<p>Information posted can be accessed by anyone, but you must sign up to comment or post.</p>
-		-->
-		
-	 </div>
+
+		<!-- <p>Information posted can be accessed by anyone, but you must sign up to comment or post.</p>-->
+	 </div> 
 	<!--<p class="meta"><a href="#" class="comments">14 Comments</a> &nbsp;&nbsp;&nbsp; <a href="#" class="permalink">Permalink</a></p>-->
 	</div> 
-<div id="recent-posts">
+	 
+	 <div style="clear: both; height: 20px;">&nbsp;</div>
+<div id="recent-posts" >
 	<h2><%= link_to "Current Posts", posts_path %></h2>
 	<ul>
 		<li class="first">
@@ -64,7 +66,7 @@ Released   : 20071215
 	</ul>
 	
 	<div style="clear: both; height: 40px;">&nbsp;</div>
-</div>
+</div> 
 <div id="sidebar">
 	<ul>
 		<li id="search">

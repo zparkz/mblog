@@ -40,7 +40,7 @@ end
 
 group :development, :test do
   gem 'sqlite3'
-  # gem 'factory_girl'
+  #gem 'factory_girl'
   #gem 'ruby-debug19', :require => 'ruby-debug' # MOD KIMADA 2/21/2013 Commented out
 end
 group :production do
