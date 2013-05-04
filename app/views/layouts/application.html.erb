@@ -21,11 +21,15 @@
       <div class="container">
         <div class="content">
            <div class="row">
-            <div class="span12">
+            <!--modifying column views -spark 5/4/2013 -->
+            <div class="span12"><%= yield %>
+              <div class="span03">
               <%= render 'layouts/messages' %>
-              <%= yield %>
+              <div class="span03">
             </div>
           </div>
+        </div>
+      </div>
           <footer>
           </footer>
         </div>

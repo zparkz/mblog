@@ -15,12 +15,13 @@ Released   : 20071215
 <title>Women in Technology</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<!--added direct link to application.css instead of default style.css (spark 4/30/2013) -->
-<link href="application.css" rel="stylesheets" type="text/css" media="screen" />
+<!--added direct link to bootsrap.css instead of default style.css -spark 5/4/2013) -->
+<link href="bootstrap.css" rel="stylesheets" type="text/css" media="screen" />
 </head>
-<!--added missing body tag (spark 5/2/2013) -->
+<!--added missing body tag -spark 5/2/2013 -->
 <body>
-
+	<!--adding bootsrap.js to modify views -spark 5/4/2013-->
+<script scr="js/bootstrap.js"></script>
 <div id="latest-post" class="post">
 	<!--<p class="byline"><span>Posted on April 21st, 2013 by <a href="#">Alison Ross</a></span></p>-->
 	<h1 class="title"><a href="#">About This Site</a></h1>
@@ -32,8 +33,7 @@ Released   : 20071215
 	 </div> 
 	<!--<p class="meta"><a href="#" class="comments">14 Comments</a> &nbsp;&nbsp;&nbsp; <a href="#" class="permalink">Permalink</a></p>-->
 	</div> 
-	 
-	 <div style="clear: both; height: 20px;">&nbsp;</div>
+	<div style="clear: both; height: 20px;">&nbsp;</div> <!-- this adds necssary paragraph spacing-spark 5/4/2013-->
 <div id="recent-posts" >
 	<h2><%= link_to "Current Posts", posts_path %></h2>
 	<ul>
@@ -65,13 +65,14 @@ Released   : 20071215
 		</li>
 	</ul>
 	
-	<div style="clear: both; height: 40px;">&nbsp;</div>
+	<div style="clear: both; height: 40px;">&nbsp;</div>  
 </div> 
 <div id="sidebar">
 	<ul>
 		<li id="search">
 			<h2>Search</h2>
-			<form id="searchform" method="get" action="">
+			<!-- adding mod to form view -spark 5/4/2013-->
+			<form class="well form-search" id="searchform" method="get" action="">
 				<div>
 					<input type="text" name="s" id="s" size="15" />
 					<br />
@@ -99,7 +100,7 @@ Released   : 20071215
 					</thead>
 					<tfoot>
 						<tr>
-							<td abbr="Aoril" colspan="3" id="prev"><a href="#" title="View posts for April 2013">&laquo; Apr</a></td>
+							<td abbr="April" colspan="3" id="prev"><a href="#" title="View posts for April 2013">&laquo; Apr</a></td>
 							<td class="pad">&nbsp;</td>
 							<td abbr="June" colspan="3" id="next"><a href="3" title="View posts for June 2013">Jun &raquo;</a></td>
 						</tr>
@@ -168,7 +169,7 @@ Released   : 20071215
 <hr />
 <div id="footer">
 	<p class="legal">&copy;2013 All Rights Reserved.</p>
-	<p class="credit">Designed by <a href="http://www.freecsstemplates.org">FCT</a>.</p>
+	<p class="credit">Designed by R-KATZ Project CS170<a href="">R-KATZ</a>.</p>
 </div>
 </body>
 </html>

@@ -16,6 +16,7 @@ gem "guard", :group => :development
 gem "capybara", ">= 2.0.3", :group => :test
 gem "factory_girl_rails", ">= 4.2.0", :group => [:development, :test]
 gem "bootstrap-sass", ">= 2.3.0.0"
+gem "twitter-bootstrap-rails"
 gem "devise", ">= 2.2.3"
 gem "cancan", ">= 1.6.9"
 gem "rolify", ">= 3.2.0"
@@ -26,7 +27,6 @@ gem "better_errors", ">= 0.7.2", :group => :development
 gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri_19, :rbx]
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 gem "letter_opener"
-gem "twitter-bootstrap-rails"
 gem "omniauth", "~> 1.1.1"
 gem "omniauth-facebook", "~> 1.4.1"
 gem 'omniauth-linkedin'
