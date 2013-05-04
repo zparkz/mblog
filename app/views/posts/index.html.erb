@@ -36,8 +36,11 @@
         <td>
         <%= link_to post.user.try(:name), posts_path(:user => post.user.id) %>
         </td>
+        <% if current_user && (current_user.has_role?(:admin)) %>
         <td><%= post.created_at %></td>
+        <td>
         <td><%= post.exp_date %></td>
+        <% end %>
         <td><% post.categories.each do |cat| %>
         <%= link_to cat.name, posts_path(:cat => cat.id) %>
         <% end %></td>
