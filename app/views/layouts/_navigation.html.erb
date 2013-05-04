@@ -19,6 +19,10 @@
     <li>
     <%= link_to 'Edit account', edit_user_registration_path %>
     </li>
+    <!--added Posts link to menu for users/admin-spark 5/04/2013 -->
+    <li>
+      <%= link_to 'Posts', posts_path %>
+      </li>
     <% if current_user.has_role? :admin %>
       <li>
       <%= link_to 'Users', users_path %>
@@ -26,6 +30,7 @@
       <li>
       <%= link_to 'Categories', categories_path %>
       </li>
+       
     <% end %>
   <% else %>
     <li>
@@ -33,7 +38,6 @@
     </li>
   <% end %>
     <li><a href="http://www.linkedin.com/groups/Mills-College-Connections-46150?gid=46150&mostPopular=&trk=tyah" target = 'new' accesskey="4" title="Mills College Connections">Mills College Connections</a></li>
-    <li><a href="http://www.mills.edu/academics/undergraduate/cs/tours.php" accesskey="5" title="Mills College Computer Science Activities">MCS Activities</a></li>
   </ul>
 </div>
 <hr />
