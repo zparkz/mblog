@@ -33,7 +33,7 @@ Released   : 20071215
 	 </div> 
 	<!--<p class="meta"><a href="#" class="comments">14 Comments</a> &nbsp;&nbsp;&nbsp; <a href="#" class="permalink">Permalink</a></p>-->
 	</div> 
-	<div style="clear: both; height: 20px;">&nbsp;</div> <!-- this adds necssary paragraph spacing-spark 5/4/2013-->
+	<div style="clear: both; height: 20px;">&nbsp;</div> <!-- this adds necssary  spacing-spark 5/4/2013-->
 <div id="recent-posts" >
 	<h2><%= link_to "Current Posts", posts_path %></h2>
 	<ul>
@@ -71,12 +71,14 @@ Released   : 20071215
 	<ul>
 		<li id="search">
 			<h2>Search</h2>
-			<!-- adding mod to form view -spark 5/4/2013-->
+			<!-- adding mod to form view like search placeholder and etc..-spark 5/4/2013-->
 			<form class="well form-search" id="searchform" method="get" action="">
 				<div>
-					<input type="text" name="s" id="s" size="15" />
+					<input type="text" class="span3 search-query" placeholder="Search..." name="s" id="s" size="15" />
+					<button class="btn">Search</button>
 					<br />
-					<input name="submit" type="submit" value="Search" />
+					<!-- remvd and added bootstrap rounded with hint -spark 05/04/2013
+					<input name="submit" type="submit" value="Search" />-->
 				</div>
 			</form>
 		</li>
