@@ -39,7 +39,6 @@
         </td>
         <% if current_user && (current_user.has_role?(:admin)) %>
         <td><%= post.created_at %></td>
-        <td>
         <td><%= post.exp_date %></td>
         <% end %>
         <td><% post.categories.each do |cat| %>
